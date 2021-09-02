@@ -1,9 +1,9 @@
-nums = input()
-num = nums.split(' ')
-x = int(num[0])
-y = int(num[1])
-z = int(num[2])
-s = x + y + z
-c = s * (s - 1) / 2
-p = (1 - (z * (z - 1) / 2 + 0.25 * y * (y - 1) / 2 + y * z * 0.5) / c)
-print(round(p , 5))
+x = input()
+x = list(map(int,x.split()))
+k,m,n = x[0], x[1], x[2],
+
+def firstLaw(k,m,n):
+   N = float(k+m+n)
+   return(1 - 1/N/(N-1)*(n*(n-1) + n*m + m*(m-1)/4.))
+
+print (firstLaw(k,m,n))
