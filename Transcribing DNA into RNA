@@ -1,0 +1,3 @@
+seq= str(inpu())
+rna = seq.replace('T', 'U')
+print(rna)
