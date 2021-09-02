@@ -1,0 +1,9 @@
+nums = input()
+num = nums.split(' ')
+x = int(num[0])
+y = int(num[1])
+z = int(num[2])
+s = x + y + z
+c = s * (s - 1) / 2
+p = (1 - (z * (z - 1) / 2 + 0.25 * y * (y - 1) / 2 + y * z * 0.5) / c)
+print(round(p , 5))
