@@ -1,0 +1,11 @@
+x = input()
+motif = input()
+
+result = []
+length = len(motif)
+
+for i in range(len(x)):
+   if x[i] == motif[0] and x[i:i+length] == motif:
+      result.append(i+1)
+
+print (' '.join(list(map(lambda i:str(i),result))))
