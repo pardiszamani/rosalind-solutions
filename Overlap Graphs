@@ -1,0 +1,21 @@
+lines = []
+while True:
+    line = input()
+    if line != 'STOP':
+        lines.append( line)
+    else:
+        break
+s = '\n'.join(lines)
+s = s.split('>')[1:]
+ids = [ i.split('\n',1)[0].replace('\n','') for i in s]
+s = list(map( lambda i: ''.join(i.split('\n',1)[1:]).replace('\n',''), s))
+a = []
+b = []
+for i in range(len(ids)):
+    for j in range(len(s)):
+        if i != j :
+            if s[0][-3:-1] == s[j][1:3] :
+                a.append(ids[i])
+                b.append(ids[j])
+for i in range(len(a)):
+    print(a[i], b[i])
