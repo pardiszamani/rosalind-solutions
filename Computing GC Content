@@ -1,0 +1,11 @@
+seq = str(input())
+G_count= 0
+C_count= 0
+for item in seq:
+    if item == 'G':
+        G_count+=1
+    elif item == 'C':
+        C_count+=1
+GC_count = G_count + C_count
+GC_percent = ((GC_count / len(seq)) * 100)
+print(GC_percent)
