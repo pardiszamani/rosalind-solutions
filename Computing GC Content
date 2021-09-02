@@ -1,11 +1,17 @@
-seq = str(input())
-G_count= 0
-C_count= 0
-for item in seq:
-    if item == 'G':
-        G_count+=1
-    elif item == 'C':
-        C_count+=1
-GC_count = G_count + C_count
-GC_percent = ((GC_count / len(seq)) * 100)
-print(GC_percent)
+f = open('Darsad_GC.txt', 'r')
+
+max_gc_name, max_gc_content = '', 0
+
+buf = s.readline().rstrip()
+while buf:
+    seq_name, seq = buf[1:], ''
+    buf = f.readline().rstrip()
+    while not buf.startswith('>') and buf:
+        seq = seq + buf
+        buf = f.readline().rstrip()
+    seq_gc_content = (seq.count('C') + seq.count('G'))/float(len(seq))
+    if seq_gc_content > max_gc_content:
+        max_gc_name, max_gc_content = seq_name, seq_gc_content
+
+print('%s\n%.6f%%' % (max_gc_name, max_gc_content * 100))
+f.close()
