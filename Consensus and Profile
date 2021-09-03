@@ -1,0 +1,37 @@
+lines = []
+while True:
+    line = input()
+    if line != 'STOP':
+        lines.append( line)
+    else:
+        break
+s = '\n'.join(lines)
+
+s = s.split('>')[1:]
+s = list(map( lambda i: ''.join(i.split('\n',1)[1:]).replace('\n',''), s))
+
+lis = []
+
+for ii in range(len(s[0])):
+    dic = {'A':0, 'C':0, 'G':0, 'T':0 }
+    for i in s:
+        dic[i[ii]] += 1
+    lis.append(list(dic.values()))
+
+def notonu(no):
+    if no == 0:
+        return 'A'
+    elif no == 1:
+        return 'C'
+    elif no == 2:
+        return 'G'
+    elif no == 3:
+        return 'T'
+
+for i in lis:
+    print (notonu(i.index(max(i))), end='')
+print('')
+print ('A: '+ ' '.join([str(i[0]) for i in lis]))
+print ('C: '+ ' '.join([str(i[1]) for i in lis]))
+print ('G: '+ ' '.join([str(i[2]) for i in lis]))
+print ('T: '+ ' '.join([str(i[3]) for i in lis]))
