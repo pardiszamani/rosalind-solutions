@@ -1,0 +1,22 @@
+lines = []
+while True:
+    line = input()
+    if line != 'STOP':
+        lines.append( line)
+    else:
+        break
+s = '\n'.join(lines)
+s = s.split('>')[1:]
+ids = [ i.split('\n',1)[0].replace('\n','') for i in s]
+s = [ i.split('\n',1)[1].replace('\n','') for i in s]
+seq1 = s[0]
+seq2 = s[1]
+transition = 0
+transversion = 0
+for i in range(len(seq1)):
+    if seq1[i] != seq2[i]:
+        if seq1[i] in ("A", "G") and seq2[i] in ("G", "A") or seq1[i] in ("C" , "T") and seq2[i] in ("T", "C"):
+            transition +=1
+        else:
+            transversion+=1
+print(transition/transversion)
