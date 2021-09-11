@@ -10,3 +10,4 @@ def kmerComposition(dna, k):
 kmers = kmerComposition(dna, 4)
 for kmer in [''.join(s) for s in it.product('ACGT', repeat=4)]:
     print (kmers[kmer], end=' ')
+
