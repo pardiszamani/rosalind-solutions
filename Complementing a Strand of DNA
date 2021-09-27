@@ -1,1 +1,14 @@
-
+def reverse(s): 
+  str = "" 
+  for i in s: 
+    str = i + str
+  return str
+# s = input
+string=(reverse(s))
+string=string.replace('A', 't')
+string=string.replace('T', 'A')
+string=string.replace('C', 'g')
+string=string.replace('G', 'C')
+string=string.replace('g', 'G')
+string=string.replace('t', 'T')
+print(string)
